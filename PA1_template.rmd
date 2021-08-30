@@ -1,3 +1,12 @@
+---
+title: "PA1_template"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
 library(ggplot2)
 library(dplyr)
 activity<-read.csv("activity.csv")
@@ -60,3 +69,4 @@ StepsPerTimeDT$time <- stepspertime$interval/100
 # draw the line plot
 j <- ggplot(StepsPerTimeDT, aes(time, steps))
 j+geom_line(col="darkred")+ggtitle("Average steps per time interval: weekdays vs. weekends")+xlab("Time")+ylab("Steps")+theme(plot.title = element_text(face="bold", size=12))+facet_grid(DayType ~ .)
+```
